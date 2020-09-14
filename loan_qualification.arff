@@ -1,0 +1,52 @@
+% 1. Title: Loan Qualification
+%
+% 2. Sources: https://www.bankrate.com/calculators/home-equity/loan-pre-qualification-calculator.aspx
+%
+% 3. Relevent Information: peronal loans not specific mortgages or anything of the sort
+%
+% 4. Number of Instances 15 (maybe more)
+%
+% 5. Number of Attributes 10 (including the qualification)
+%
+% 6. For Each Attribute (all numeric except last)
+% 1. Loan Amount
+% 2. Interest Rate (%)
+% 3. Loan Duration (Years)
+% 4. Annual After-Tax Income
+% 5. # of Income Sources
+% 6. Payments for Existing Debt
+% 7. Credit Card Limit
+% 8. # of Dependents
+% 9. Real Estate that will Secure this Loan
+% 10. Do you Qualify? {Unlikely, Fair, Likely}
+
+@relation loan_qualification
+
+@attribute 'amt' real
+@attribute 'int' real
+@attribute 'dur' real
+@attribute 'IAT' real
+@attribute 'numInc' real
+@attribute 'pmtsDebt' real
+@attribute 'creditLimit' real
+@attribute 'numDep' real
+@attribute 'realestateSec' real
+@attribute 'qualify' {unlikely, fair, likely}
+
+@data
+
+200000, 7.5, 10, 50000, 1, 3000, 10000, 0, 250000, fair
+150000, 5, 10, 45000, 2, 2000, 10000, 2, 225000, fair
+150000, 5, 20, 75000, 1, 2000, 10000, 2, 175000, likely
+175000, 7.5, 30, 100000, 1, 1000, 20000, 3, 50000, unlikely
+50000, 5, 15, 57000, 1, 3000, 10000, 1, 20000, unlikely
+225000, 8, 20, 80000, 1, 2500, 15000, 2, 300000, fair
+75000, 7, 10, 55000, 2, 2350, 20000, 10, 125000, likely
+750000, 5, 30, 250000, 5, 3000, 50000, 1, 820000, likely
+600000, 10, 20, 150000, 1, 2000, 50000, 1, 780000, fair
+525000, 10, 20, 10000, 1, 3000, 50000, 5, 600000, fair
+50000, 5, 7, 18000, 2, 3000, 10000, 4, 125000, fair
+50000, 7, 10, 18000, 2, 5000, 5000, 1, 55000, fair
+40000, 7, 10, 18000, 2, 5000, 1000, 0, 40000, unlikely
+75000, 10, 5, 60000, 2, 4000, 10000, 1, 200000, fair
+65000, 10, 20, 57000, 1, 2000, 10000, 1, 75000, likely
